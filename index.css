@@ -1,0 +1,201 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar {
+    width: 4px;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(82, 82, 82);
+    border-radius: 50%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,700&family=Montserrat:wght@500@700&display=swap');
+
+body{
+    font-family: 'Cormorant Garamond', serif;  
+    width: auto;
+    background-color: black;
+    overflow-x: hidden;
+}
+
+a, li, ul{
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*Scroll-to-top-btn*/
+
+.scrollTop {
+    z-index: 10000000;
+    position: fixed;
+    bottom: 800px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background: #fff url(../CaioemanuelIF.github.io/icons/up.png);
+    border-radius: 50%;
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    filter: invert(100%) ;
+}
+.scrollTop.active{
+    z-index: 1000000;
+    bottom: 40px;
+    visibility: visible;
+    opacity: 1;      
+    -webkit-animation: rotate-center 0.6s ease-in-out both;
+    animation: rotate-center 0.6s ease-in-out both;
+}
+@-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  
+/*------------------------------*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    border-bottom: 1px solid rgba(247, 247, 247, 0.212);
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.logo{
+    margin-top: 80px;
+    position: absolute;
+    cursor: pointer;
+    height: 80px;
+    width: 85px;
+    border: 1px solid rgba(247, 247, 247, 0.212);
+    border-radius: 50%;
+}
+
+nav  a{
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: all 0,9s ease 0s;
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+nav a::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    left: 0;
+    bottom: -10px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: .8s cubic-bezier(0.30, 1,0.80, 1) ;
+}
+
+nav a:hover::after{
+    width: 100%;
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+.intro{
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    margin-top: 100px;
+}
+.intro_text{
+    margin-left: 20px;
+    width: 800px;
+    height: 300px;
+}
+.intro_text p{
+    color: aliceblue;
+    font-size: 64px;
+    font-family: 'Cormorant Garamond', serif; 
+}
+.intro_text h6{
+    color: rgba(214, 236, 255, 0.315);
+    font-size: 14px;
+    font-family: 'Cormorant Garamond', serif; 
+}
+.text_stair{
+    margin-left: 20px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.text_stair span{
+    margin-top: 20px;
+    cursor: default;
+}
+
+.text_stair span:nth-child(1){
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+.text_stair span:nth-child(2){
+    margin-left: 20%;
+    font-size: 35px;
+    color: rgb(197, 197, 197);
+}
+.text_stair span:nth-child(3){
+    margin-left: 30%;
+    font-size: 30px;
+    color: rgb(129, 129, 129);
+}
+.text_stair span:nth-child(4){
+    margin-left: 40%;
+    font-size: 25px;
+    color: rgb(90, 90, 90);
+}
+.text_stair span:nth-child(5){
+    margin-left: 50%;
+    font-size: 20px;
+    color: rgb(56, 56, 56);
+}
