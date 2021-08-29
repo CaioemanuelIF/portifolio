@@ -53,46 +53,12 @@ a, li, ul{
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.5s;
+    visibility: visible;
+    opacity: 1;
     filter: invert(100%) ;
 }
-.scrollTop.active{
-    z-index: 1000000;
-    bottom: 40px;
-    visibility: visible;
-    opacity: 1;      
-    -webkit-animation: rotate-center 0.6s ease-in-out both;
-    animation: rotate-center 0.6s ease-in-out both;
-}
-@-webkit-keyframes rotate-center {
-    0% {
-      -webkit-transform: rotate(0);
-              transform: rotate(0);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg);
-    }
-  }
-  @keyframes rotate-center {
-    0% {
-      -webkit-transform: rotate(0);
-              transform: rotate(0);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg);
-    }
-  }
-  
+
 /*------------------------------*/
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 nav{
     border-bottom: 1px solid rgba(247, 247, 247, 0.212);
@@ -140,7 +106,11 @@ nav a:hover::after{
     transform: scaleX(1);
     transform-origin: left;
 }
-
+/*Header-end*/
+main{
+    display: flex;
+    height: 1100px;
+}
 
 .intro{
     position: absolute;
@@ -154,7 +124,7 @@ nav a:hover::after{
     height: 300px;
 }
 .intro_text p{
-    color: aliceblue;
+    color: rgb(255, 253, 240);
     font-size: 64px;
     font-family: 'Cormorant Garamond', serif; 
 }
@@ -198,4 +168,27 @@ nav a:hover::after{
     margin-left: 50%;
     font-size: 20px;
     color: rgb(56, 56, 56);
+}
+
+/*Main-ends*/
+
+section{
+    width: 100%;
+    height: 1300px;
+    display: flex;
+    justify-content: center;
+}
+.projects{
+width: 100%;
+}
+.project_title {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.project_title h1{
+    color: rgb(255, 253, 240);
+    font-size: 64px;
 }
