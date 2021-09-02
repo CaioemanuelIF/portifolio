@@ -296,6 +296,8 @@ width:auto;
 }
 
 .projects{
+    z-index: 200;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -309,71 +311,103 @@ width:auto;
 }
 /*------*/
 
-.content{
-    width: 60%;
-    height: 100%;
-    display: flex;
+.grid {
+	position: relative;
+	margin: 0 auto;
+	padding: 1em 0 4em;
+	max-width: 1000px;
+	list-style: none;
+	text-align: center;
 }
 
-/*--navbar--*/
-.navbar_lateral{
-    position: relative;
-    border: 1px solid rgba(247, 247, 247, 0.212);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 20%;
-    height: 50%;
-}
-/**/
-.navbar_lateral  a{
-    position: absolute;
-    font-weight: 700;
-    font-size: 15px;
-    transition: all 0,9s ease 0s;
-    position: relative;
-    letter-spacing: 0.5px;
+.grid figure {
+	position: relative;
+	overflow: hidden;
+	margin: 10px 1%;
+	min-width: 320px;
+	max-width: 480px;
+	height: 260px;
+	width: 41%;
+	background: #272727;
+	text-align: center;
+	cursor: pointer;
+    border-radius: 20px;
 }
 
-.navbar_lateral a{
-    color: rgb(255, 255, 255);
-}
-.navbar_lateral a:hover{
-    color: rgb(207, 176, 109);
-}
-
-.navbar_lateral a::after{
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 1px;
-    left: 0;
-    bottom: -10px;
-    background-color: rgb(207, 176, 109);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: .8s cubic-bezier(0.30, 1,0.80, 1) ;
+.grid figure img {
+	position: relative;
+    overflow: hidden;
+	height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
 }
 
-.navbar_lateral a:hover::after{
-    width: 100%;
-    transform: scaleX(1);
-    transform-origin: left;
+.grid figure figcaption {
+	opacity: 0;
 }
-/*------------*/
-
-.navbar_lateral a:hover
-
-/*------------*/
-.drop_content{
-    position: relative;
-    height: 800px;
-    width: 500px;
-    background-color: antiquewhite;
-    margin-left: 200px;
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
 }
-.drop_content img{
-    height: 100%;
-    width: 100%;
+
+.grid figure figcaption,
+.grid figure figcaption  {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*-------*/
+figure.effect-honey {
+	background: #000000;
+}
+
+figure.effect-honey img {
+	opacity: 0.9;
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+}
+
+figure.effect-honey:hover img {
+	opacity: 0.1;
+}
+
+figure.effect-honey figcaption::before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: rgb(179, 149, 86);
+	content: '';
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+}
+
+figure.effect-honey h2 {
+	position: absolute;
+	left: 0;
+	padding: 1em 1.5em;
+	width: 100%;
+	text-align: left;
+	-webkit-transform: translate3d(0,-30px,0);
+	transform: translate3d(0,-30px,0);
+}
+
+
+figure.effect-honey figcaption::before,
+figure.effect-honey h2 {
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+}
+
+figure.effect-honey:hover figcaption::before,
+figure.effect-honey:hover h2,
+.grid figure figcaption:hover {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+    color: rgb(179, 149, 86);
 }
